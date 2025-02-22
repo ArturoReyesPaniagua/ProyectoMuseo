@@ -4,7 +4,7 @@ import "./presentacion.css";
 const slides = [
   {
     "title": "¿Cuál te gustaría que fuera el tema principal de tu exposición de museografía?",
-    "content": "La evolución de los juegos GOTY a lo largo del tiempo."
+    "content": "Los videjuegos declarados como Goty y la evolución de estos a lo largo del tiempo."
 },
 {
     "title": "¿Cuáles serían los subtemas de tu exposición de museografía?",
@@ -12,7 +12,7 @@ const slides = [
 },
 {
     "title": "¿Qué quiere comunicar tu exposición?",
-    "content": "Mostrar cómo los juegos GOTY han influido en la cultura popular, la tecnología y la industria del entretenimiento, destacando su evolución y su impacto en los jugadores y desarrolladores."
+    "content": "Mostrar cómo los juegos GOTY han influido en la cultura popular, la tecnología y la industria del entretenimiento, enfocandonos en como esto influyo en nosotros (jugadores) y su impacto en la sociedad y los desarrolladores."
 },
 {
     "title": "¿En dónde se llevará a cabo? (puede ser un espacio real o ficticio)",
@@ -20,7 +20,8 @@ const slides = [
 },
 {
     "title": "¿Cuánto tiempo durará tu exposición?",
-    "content": "Podría durar de 2 horas a 2 horas y media."
+    "content": "Podría durar de 2 horas a 2 horas y media. Nos gustaria que la gente jugara, viera videos de los desarrolladores y un poco de el background de la inspiracion para realizar el videojuego",
+    
 },
 {
     "title": "¿Con qué recursos contarías?",
