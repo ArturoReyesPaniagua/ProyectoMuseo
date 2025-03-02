@@ -3,11 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
 const Menu = () => {
-    const navigate = useNavigate(); // Aquí importamos useNavigate
-
-    const handleClick = (option) => {
-        alert(`Opción ${option} seleccionada`);
-    };
+    const navigate = useNavigate(); 
 
     return (
         <div className="container">
@@ -17,9 +13,11 @@ const Menu = () => {
                 <p className='Nombres'>Arturo Reyes y Arturo Cruz</p>
                 
                 <div className="button-group">
-                    <button onClick={() => navigate('/presentacion')}>Actividad 2</button>
+                    <button onClick={() => navigate('/actividad2')}>Actividad 2</button>
+                    <button onClick={() => navigate('/actividad3')}>Actividad 3</button>
+
                     {
-                    //<button onClick={() => handleClick(2)}>Tarea 3</button>
+                    
                     // <button onClick={() => handleClick(3)}>Tarea 4</button>
                     }
                 </div>
