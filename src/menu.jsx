@@ -16,7 +16,12 @@ const Menu = () => {
                     <button onClick={() => navigate('/actividad2')}>Actividad 2</button>
                     <button onClick={() => navigate('/actividad3')}>Actividad 3</button>
                     <button onClick={() => navigate('/actividad4')}>Actividad 4</button>
+                    <button onClick={() => navigate('/actividad5')}>Actividad 5</button>
                     <button onClick={() => navigate('/actividad6')}>Actividad 6</button>
+                    <button onClick={() => navigate('/actividad8')}>Actividad 8</button>
+                    <button onClick={() => navigate('/actividad9')}>Actividad 9</button>
+                    <button onClick={() => navigate('/actividad10')}>Actividad 10</button>
+                    <button onClick={() => navigate('/actividad11')}>Actividad 11</button>
                 </div>
             </div>
         </div>
