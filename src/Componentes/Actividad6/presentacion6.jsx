@@ -1,3 +1,4 @@
+/* src/Componentes/Actividad6/presentacion6.jsx */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./pre6.css";
@@ -5,8 +6,10 @@ import "./pre6.css";
 const slides = [
   {
     title: "Auditoría Gráfica: Exposición de Videojuegos GOTY",
-    content: "Análisis de exposiciones similares y aprendizajes para nuestro proyecto.",
-    isIntro: true
+    content: "Análisis de exposiciones similares y aprendizajes para nuestro proyecto",
+    isIntro: true,
+    authors: "ARTURO CRUZ SUÁREZ - ARTURO REYES PANIAGUA",
+    subject: "MUSEOGRAFÍA"
   },
   {
     title: "Análisis: The Game Awards Experience (Nueva York)",
@@ -98,16 +101,9 @@ const slides = [
     ]
   },
   {
-    title: "Vista General - Zona Clímax",
-    content: "Perspectiva aérea que muestra la disposición de los elementos clave en la sala del GOTY más reciente, con indicaciones de flujo de visitantes y puntos de interacción.",
-    hasImage: true,
-    imageID: "climax-vista-general"
-  },
-  {
-    title: "Perspectiva de Visitante - Zona Clímax",
-    content: "Vista en primera persona que muestra cómo experimentará el visitante la zona, con puntos de interacción claramente señalados.",
-    hasImage: true,
-    imageID: "climax-perspectiva-visitante"
+    title: "VISTA GENERAL - ZONA CLÍMAX: GOTY RECIENTE",
+    content: "Perspectiva aérea con interacciones de visitantes",
+    hasClimaxDiagram: true
   }
 ];
 
@@ -127,20 +123,106 @@ function Pre6() {
     }
   };
 
-  // Función para renderizar el contenido según su tipo
+  // SVG Component for Climax Zone
+  const ClimaxZoneDiagram = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" className="climax-diagram">
+      {/* Background */}
+      <rect width="100%" height="100%" fill="#333" stroke="#000" strokeWidth="2"/>
+      
+      {/* Main area */}
+      <rect x="100" y="100" width="600" height="300" fill="#666" stroke="#000" strokeWidth="2"/>
+      
+      {/* Main Screen */}
+      <rect x="150" y="100" width="500" height="200" fill="#4da6ff" stroke="#000" strokeWidth="2"/>
+      <text x="400" y="200" textAnchor="middle" fontFamily="Arial" fontSize="16" fill="#fff" fontWeight="bold">PANTALLA PRINCIPAL</text>
+      <text x="400" y="230" textAnchor="middle" fontFamily="Arial" fontSize="12" fill="#fff">Montaje de momentos memorables</text>
+      
+      {/* Watching group icon */}
+      <circle cx="400" cy="330" r="10" fill="#2ecc71"/>
+      <rect x="390" y="340" width="20" height="20" fill="#2ecc71" stroke="#000"/>
+      <text x="400" y="370" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#000">Grupo viendo</text>
+      
+      {/* Demo game area */}
+      <rect x="130" y="320" width="200" height="60" fill="#999" stroke="#000" strokeWidth="2"/>
+      <text x="230" y="350" textAnchor="middle" fontFamily="Arial" fontSize="12" fill="#000" fontWeight="bold">DEMO JUGABLE</text>
+      <rect x="160" y="355" width="140" height="20" fill="#777" stroke="#000"/>
+      <text x="230" y="370" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#fff">Jugando demo</text>
+      
+      {/* Central exhibition */}
+      <rect x="350" y="310" width="100" height="80" fill="#f1c40f" stroke="#000" strokeWidth="2"/>
+      <text x="400" y="350" textAnchor="middle" fontFamily="Arial" fontSize="12" fill="#000" fontWeight="bold">EXHIBICIÓN CENTRAL</text>
+      <text x="400" y="370" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#000">Videojuego GOTY actual</text>
+      
+      {/* Voting panel */}
+      <rect x="470" y="320" width="140" height="60" fill="#e74c3c" stroke="#000" strokeWidth="2"/>
+      <text x="540" y="345" textAnchor="middle" fontFamily="Arial" fontSize="12" fill="#fff" fontWeight="bold">PANEL DE VOTACIÓN</text>
+      <text x="540" y="365" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#fff">Pantalla táctil</text>
+      <text x="540" y="380" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#fff">Usuarios votan favoritos</text>
+      
+      {/* Social station */}
+      <rect x="620" y="150" width="100" height="100" fill="#3498db" stroke="#000" strokeWidth="2"/>
+      <text x="670" y="190" textAnchor="middle" fontFamily="Arial" fontSize="12" fill="#fff" fontWeight="bold">ESTACIÓN SOCIAL</text>
+      <text x="670" y="210" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#fff">Compartir en redes</text>
+      <text x="670" y="230" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#fff">Usuarios comparten</text>
+      
+      {/* Feedback area */}
+      <rect x="620" y="270" width="100" height="70" fill="#f8bbd0" stroke="#000" strokeWidth="2"/>
+      <text x="670" y="305" textAnchor="middle" fontFamily="Arial" fontSize="12" fill="#000" fontWeight="bold">FEEDBACK</text>
+      <text x="670" y="325" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#000">Opiniones y sugerencias</text>
+      <text x="670" y="340" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#000">Usuarios opinan</text>
+      
+      {/* User flow arrows */}
+      <path d="M200 200 C 300 200 300 330 230 330" stroke="#ff9800" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+      <path d="M500 200 C 600 200 600 350 540 320" stroke="#ff9800" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+      
+      {/* Legend */}
+      <rect x="20" y="20" width="200" height="180" fill="#fff" stroke="#000" strokeWidth="2"/>
+      <text x="120" y="35" textAnchor="middle" fontFamily="Arial" fontSize="12" fontWeight="bold">INTERACCIONES</text>
+      
+      <circle cx="35" cy="60" r="8" fill="#ff6b6b"/>
+      <text x="50" y="65" fontFamily="Arial" fontSize="10">Recorrido sugerido</text>
+      
+      <rect x="30" y="75" width="15" height="15" fill="#3498db"/>
+      <text x="50" y="87" fontFamily="Arial" fontSize="10">Interacción visual</text>
+      
+      <rect x="30" y="95" width="15" height="15" fill="#f1c40f"/>
+      <text x="50" y="107" fontFamily="Arial" fontSize="10">Interacción física</text>
+      
+      <rect x="30" y="115" width="15" height="15" fill="#e74c3c"/>
+      <text x="50" y="127" fontFamily="Arial" fontSize="10">Interacción digital</text>
+      
+      <circle cx="35" cy="145" r="8" fill="#2ecc71"/>
+      <text x="50" y="148" fontFamily="Arial" fontSize="10">Interacción jugable</text>
+      
+      <rect x="30" y="155" width="15" height="15" fill="#9b59b6"/>
+      <text x="50" y="167" fontFamily="Arial" fontSize="10">Interacción de input</text>
+      
+      <circle cx="35" cy="185" r="8" fill="#1abc9c"/>
+      <text x="50" y="188" fontFamily="Arial" fontSize="10">Interacción verbal</text>
+      
+      {/* Title */}
+      <text x="400" y="40" textAnchor="middle" fontFamily="Arial" fontSize="20" fill="#fff" fontWeight="bold">VISTA GENERAL - ZONA CLÍMAX: GOTY RECIENTE</text>
+      <text x="400" y="65" textAnchor="middle" fontFamily="Arial" fontSize="14" fill="#fff">Perspectiva aérea con interacciones de visitantes</text>
+    </svg>
+  );
+
+  // Function to render content
   const renderContent = (slide) => {
     if (slide.isIntro) {
-      return <p className="intro-text">{slide.content}</p>;
+      return (
+        <div className="intro-wrapper">
+          <p className="intro-text">{slide.content}</p>
+          <p className="authors">{slide.authors}</p>
+          <p className="subject">{slide.subject}</p>
+        </div>
+      );
     }
     
-    if (slide.hasImage) {
+    if (slide.hasClimaxDiagram) {
       return (
-        <div className="image-container">
-          <p>{slide.content}</p>
-          <div className={`mockup-image ${slide.imageID}`}>
-            {/* Esta div se estilizará con CSS para mostrar una representación del diseño */}
-            <span className="image-placeholder">Imagen de la zona del clímax</span>
-          </div>
+        <div className="diagram-wrapper">
+          <p className="content-text">{slide.content}</p>
+          <ClimaxZoneDiagram />
         </div>
       );
     }

@@ -1,0 +1,162 @@
+/* src/Componentes/Actividad5/pre5.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #003366, #0066cc);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    height: 80vh;
+    background: rgba(0, 102, 204, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 102, 204, 0.5);
+    padding: 20px;
+    text-align: center;
+    border: 2px solid rgba(0, 102, 204, 0.6);
+    position: relative;
+  }
+  
+  .presentation-box5 {
+    width: 85%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    padding: 0 20px;
+  }
+  
+  .presentation-box5::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .presentation-box5::-webkit-scrollbar-track {
+    background: rgba(0, 51, 102, 0.2);
+    border-radius: 10px;
+  }
+  
+  .presentation-box5::-webkit-scrollbar-thumb {
+    background: rgba(0, 102, 204, 0.6);
+    border-radius: 10px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4da6ff;
+    text-shadow: 0px 0px 15px rgba(0, 102, 204, 0.8);
+    font-family: 'Arial Black', sans-serif;
+  }
+  
+  .content-text {
+    font-size: 1.3rem;
+    max-width: 90%;
+    color: #e6f0ff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .blueprint-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .blueprint-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0, 102, 204, 0.2);
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .legend-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+  
+  .yellow { background-color: #f1c40f; }
+  .blue { background-color: #3498db; }
+  .green { background-color: #2ecc71; }
+  .light-blue { background-color: #5dade2; }
+  .red { background-color: #e74c3c; }
+  .orange { background-color: #f39c12; }
+  
+  .description-list {
+    text-align: left;
+    font-size: 1.2rem;
+    color: #e6f0ff;
+    max-width: 90%;
+    padding-left: 0;
+    list-style-type: none;
+  }
+  
+  .description-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  .description-list li::before {
+    content: "•";
+    color: #4da6ff;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+  }
+  
+  .back-button {
+    position: absolute;
+    bottom: 20px;
+    background: #003366;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background: #002244;
+    transform: translateY(-2px);
+  }
